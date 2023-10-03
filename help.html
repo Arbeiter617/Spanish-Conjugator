@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Spanish Conjugator_Help</title>
+  <link rel="stylesheet" href="helpIndex.css">
+</head>
+<body>
+     <!-- Buttons -->
+
+     <div class="topnav">
+        <a href="menu.html">MENU</a>
+        <a href="index.html">CONJUGATOR</a>
+        <a href="credits.html">Credits</a>
+        
+    
+        <div style="padding-left:16px"></div>
+      </div>
+
+      <h3 class="name"><u>SPANISH CONJUGATOR HELP</u></h3>
+
+      <h2>What do you need help with?</h2>
+      <h3 id="info"></h2>
+
+      <div class="container">
+        <div class="vertical-center">
+           <input type="text" id="Username"/>
+            <input type="button" id = "tutorial" value="Submit" onclick = "helpInput()" />
+            <input type="button" id = "tutorial" value="OK" onclick = "clearInput()" />
+           <hr />
+        </div>
+      </div>
+
+      <img id="image" src= "assets/sounds/images/chart.png" alt="GFG image"/>
+	</div>
+            
+
+      <script>
+        var spanishVerbsAvailableList = [["empezar", " Querer", " pensar", " entender", " mostrar", " preferir", " poder", " dormir"]];
+        var spanishVerbsAvailable = ["empezar", "Querer", "pensar", "entender", "mostrar", "preferir", "poder", "dormir"];
+
+        var verbDefs = {
+         empezar: "To start - To Begin", 
+         Querer: "To want",
+         pensar: "think - To plan",
+         entender: "To understand",
+         mostrar: "To show",
+         preferir: "To prefer",
+         poder: "To be able to",
+         dormir: "To sleep",   
+        };
+        
+        function helpInput() {
+          var txtInput = document.getElementById("Username");
+
+          //alert(txtInput.value);
+          if(txtInput.value.includes("verb") || txtInput.value.includes("Verb")) {
+            //alert("verbs?");
+            //go to verb help//
+            document.getElementById("info").innerHTML = "These verbs are currently in our library: " + spanishVerbsAvailableList[0];
+
+          } else if(txtInput.value.includes("definition") || txtInput.value.includes("Definition")) {
+            //go to definitions help//
+            var prompt1 = prompt("Which verb?");
+              if(spanishVerbsAvailable.includes(prompt1)) {
+                document.getElementById("info").innerHTML = "The definition of " + prompt1 + " is: " + verbDefs[prompt1] + ".";
+              } else {
+                document.getElementById("info").innerHTML = "Error 404: " + prompt1 + " does not have a definition.";
+              }
+            
+          } else if(txtInput.value.includes("conjugation") || txtInput.value.includes("Conjugation")) {
+            //go to conjugation help//
+            document.getElementById("info").innerHTML = "First, find the subject. Whether that be 'yo', 'tu', etc. Then see if the ending is 'ar', 'er', or 'ir'. Then conjugate based on your charts";
+            showImage();
+          } else if(txtInput.value.includes("stem") || txtInput.value.includes("Stem")) {
+            //go to stem help//
+            document.getElementById("info").innerHTML = "Make sure to look at the parenthesis next to the verb. Example: (e-ie). In this instance, you MUST replace e with ie. But make sure, if there are multiple e's for instance, that you ONLY REPLACE the LAST one!";
+          } else {
+            //alert("error");
+            document.getElementById("info").innerHTML = "*" + txtInput.value + "*" + " isn't recognized by our system. If your question is not seen here, please try contacting our computer engineer here: (504) 717-1184. Available questions are: Verbs, Stems, Conjugation, and Definitions.";
+          }
+        } 
+
+        function clearInput() {
+          document.getElementById("info").innerHTML = "";
+          document.getElementById('image')
+					.style.display = "none";
+        }
+
+        function showImage() {
+          /* Access image by id and change
+			    the display property to block*/
+		      	document.getElementById('image')
+					.style.display = "block";
+
+		     
+        }
+      </script>
+</body>
+</html>

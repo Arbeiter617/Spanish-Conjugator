@@ -1,0 +1,117 @@
+body {
+    background-color: black;
+}
+
+.name {
+    text-align: center;
+    color:white;
+    font-size: 50px;
+  }
+
+.topnav {
+    overflow: hidden;
+    background-color: #ffaa1d;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    
+    color: black;
+  }
+  
+  .topnav .search-container {
+    float: right;
+  }
+  
+  .topnav input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+  }
+  
+  .topnav .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .topnav .search-container button:hover {
+    background: #ccc;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav .search-container {
+      float: none;
+    }
+    .topnav a, .topnav input[type=text], .topnav .search-container button {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    .topnav input[type=text] {
+      border: 1px solid #ccc;  
+    }
+  }
+
+  @font-face {
+    font-family: Abadi MT Condensed
+    }
+    
+    .wrapper {
+     position: absolute;
+     top: 100%;
+     left: 50%;
+     width: 600px;
+     margin-left: -300px;
+     font-family: Abadi MT Condensed;
+     text-align: center;
+     color: #fff;
+     animation: 80s credits linear infinite;
+     animation-delay: 1s;
+    }
+    .video_title {
+     margin-bottom: 50px;
+     font-size: 80px;
+     text-shadow: 2px 2px #878787;
+     letter-spacing: 0px;
+     text-outline: #304345;
+     text-decoration: none;
+    }
+    .job_title {
+     margin-bottom: 5px;
+     font-size: 30px;
+     text-shadow: 2px 2px #878787;
+    }
+    .person_name {
+     margin-bottom: 50px;
+     font-size: 50px;
+     font-variant:small-caps;
+     text-shadow: 2px 2px #878787;
+    }
+    @keyframes credits {
+     0% {
+     top: 100%;
+     }
+     100% {
+     top: -500%;
+     }
+    }
+
